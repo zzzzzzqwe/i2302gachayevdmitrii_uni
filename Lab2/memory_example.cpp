@@ -72,7 +72,7 @@ int main()
 
     StructWithArray structArray[2] = {};
 
-    // Меняем значение arr[3] в структуре structArray[0] на 77
+    // Меняем значение 3 элемента массива в 1 элементе массива structArray[0] на 77
 
     structArray[0].arr[3] = 77;
 
