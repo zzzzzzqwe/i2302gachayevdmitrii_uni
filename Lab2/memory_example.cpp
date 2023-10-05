@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 
-// Создаем структуру TwoInts, содержащую переменные а и b типа int
+// Создаем структуру TwoInts, вводим переменные а и b типа int
 
 struct TwoInts
 {
@@ -10,7 +10,7 @@ struct TwoInts
     int b;
 };
 
-// Создаем структуру StructWithArray, содержащую массив arr из 4 элементов,
+// Создаем структуру StructWithArray, вводим массив arr из 4 элементов,
 // и указатель someNumber
 
 struct StructWithArray
@@ -21,7 +21,7 @@ struct StructWithArray
 
 int main()
 {
-    // Создаем экземпляр структуры TwoInts под названием i2, указываем
+    // Вводим экземпляр структуры TwoInts под названием i2, указываем
     // что значения a и b по умолчанию равны 0, затем меняем их значения
     // в экземпляре структуры на 5 и 7
 
@@ -32,7 +32,7 @@ int main()
     std::cout << i2.a << std::endl;
     std::cout << i2.b << std::endl;
 
-    // Создаем экземпляры структуры StructWithArray s и s1,
+    // Вводим экземпляры структуры StructWithArray s и s1,
     // в них устанавливаем значения первого элемента массива arr
     // на 10 и 15 соответственно
 
@@ -42,7 +42,7 @@ int main()
     StructWithArray s1 = {};
     s1.arr[0] = 15;
 
-    // Создаем указатель sPointer на переменную s
+    // Вводим указатель sPointer на переменную s
     // Меняем значение arr[0] на 20 с помощью указателя
     // в той структуре, на которую указывает указатель (s)
 
@@ -68,7 +68,7 @@ int main()
     std::cout << s.arr[0] << std::endl;
     std::cout << s1.arr[0] << std::endl;
 
-    // Создаем массив structArray состоящий из типа StructWithArray
+    // Вводим массив structArray из 2 элементов типа StructWithArray
 
     StructWithArray structArray[2] = {};
 
@@ -81,7 +81,7 @@ int main()
     structArray[1].someNumber = &structArray[0].arr[3];
     
     // Переключаем указатель sPointer на структуру s
-    // Создаем указатель pointer, который указывает на arr[3] структуры, на которую указывает sPointer(s),
+    // Вводим указатель pointer, который указывает на arr[3] структуры, на которую указывает sPointer(s),
     // меняем его значение на 72, выводим его с помощью указателя pointer   
 
     sPointer = &s;
