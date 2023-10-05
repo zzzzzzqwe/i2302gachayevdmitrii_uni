@@ -68,7 +68,7 @@ int main()
     std::cout << s.arr[0] << std::endl;
     std::cout << s1.arr[0] << std::endl;
 
-    // Создаем массив structArray состоящий из 2 структур StructWithArray
+    // Создаем массив structArray состоящий из типа StructWithArray
 
     StructWithArray structArray[2] = {};
 
