@@ -36,7 +36,7 @@ g++ main.cpp f.cpp
 выполняется, и создается файл a.exe
 
 Если скомпилировать только файл main.cpp, мы получим ошибку:
-```
+```cpp
 undefined reference to `hello(int)'
 ```
 так как в файле main.cpp остутствует определение функции hello.
@@ -45,7 +45,7 @@ undefined reference to `hello(int)'
 
 Далее добавляем к определению функции модификатор static.
 f.cpp:
-```
+```cpp
 #include <iostream>
 using namespace std;
 static int hello(int x){
