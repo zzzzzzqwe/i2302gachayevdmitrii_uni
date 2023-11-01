@@ -14,9 +14,10 @@ int main()
 ```
 И также в файле f.cpp объявим функцию int hello(int x):
 
+
+```cpp
 #include <iostream>
 using namespace std;
-```cpp
 int hello(int x);
 ```
 А затем скомпилируем
