@@ -2,7 +2,6 @@
 ```cpp
 #include <iostream>
 using namespace std;
-
 int hello(int x);
 int main()
 {
