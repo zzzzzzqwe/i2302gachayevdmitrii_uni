@@ -45,7 +45,7 @@ int getElementAtIndex(const DynamicArray* arr, size_t index) {
 
 // 5. Создайте функцию, которая возвращает текущий кусок массива как std::span.
 std::span<int> getCurrentSpan(const DynamicArray* arr) {
-    return std::span<int>{arr->data, arr->length};
+    return {arr->data, arr->length};
 }
 
 // 6. Создайте функцию, которая очищает динамическую память, выделенную функциями массива. Вызывайте эту функцию когда память массива больше не нужна
