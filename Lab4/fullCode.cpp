@@ -25,7 +25,8 @@ DynamicArray createDynamicArray() {
 // 3. При добавлении элементов в массив, удваивайте длину, если массив полный.
 void addElementToArray(DynamicArray* arr, int element) {
     if (arr->length == arr->capacity) {
-        size_t newCapacity = arr->capacity * 2;
+        // проверка на нулевое capacity
+        size_t newCapacity = (arr->capacity == 0) ? 1 : arr->capacity * 2;
         int* newData = new int[newCapacity];
         std::copy(arr->data, arr->data + arr->length, newData);
         delete[] arr->data;
@@ -44,13 +45,12 @@ int getElementAtIndex(const DynamicArray* arr, size_t index) {
 
 // 5. Создайте функцию, которая возвращает текущий кусок массива как std::span.
 std::span<int> getCurrentSpan(const DynamicArray* arr) {
-    return std::span<int>(arr->data, arr->length);
+    return std::span<int>{arr->data, arr->length};
 }
 
 // 6. Создайте функцию, которая очищает динамическую память, выделенную функциями массива. Вызывайте эту функцию когда память массива больше не нужна
 void freeDynamicArray(DynamicArray* arr) {
     delete[] arr->data;
-    arr->data = nullptr;
     arr->length = 0;
     arr->capacity = 0;
 }
@@ -105,6 +105,15 @@ void test6() {
     assert(arr.length == 0);
     assert(arr.capacity == 4);
 }
+// тест проверяющий что случай с 0 capacity обрабатывается правильно
+void test7() {
+    DynamicArray arr = createDynamicArrayWithCapacity(0);
+    addElementToArray(&arr, 5);
+    assert(arr.capacity == 1);
+    assert(arr.length == 1);
+    assert(arr.data[0] == 5);
+}
+
 
 
 int main() {
@@ -114,6 +123,7 @@ int main() {
     test4();
     test5();
     test6();
+    test7();
 
 
     return 0;

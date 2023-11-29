@@ -18,7 +18,8 @@ DynamicArray createDynamicArray() {
 
 void addElementToArray(DynamicArray* arr, int element) {
     if (arr->length == arr->capacity) {
-        size_t newCapacity = arr->capacity * 2;
+        // проверка на нулевое capacity
+        size_t newCapacity = (arr->capacity == 0) ? 1 : arr->capacity * 2;
         int* newData = new int[newCapacity];
         std::copy(arr->data, arr->data + arr->length, newData);
         delete[] arr->data;
@@ -35,7 +36,7 @@ int getElementAtIndex(const DynamicArray* arr, size_t index) {
 }
 
 std::span<int> getCurrentSpan(const DynamicArray* arr) {
-    return std::span<int>(arr->data, arr->length);
+    return std::span<int>{arr->data, arr->length};
 }
 
 void freeDynamicArray(DynamicArray* arr) {

@@ -53,6 +53,14 @@ void test6() {
     assert(arr.capacity == 4);
 }
 
+// тест проверяющий что случай с 0 capacity обрабатывается правильно
+void test7() {
+    DynamicArray arr = createDynamicArrayWithCapacity(0);
+    addElementToArray(&arr, 5);
+    assert(arr.capacity == 1);
+    assert(arr.length == 1);
+    assert(arr.data[0] == 5);
+}
 
 int main() {
     test1();
@@ -61,6 +69,7 @@ int main() {
     test4();
     test5();
     test6();
+    test7();
 
 
     return 0;
