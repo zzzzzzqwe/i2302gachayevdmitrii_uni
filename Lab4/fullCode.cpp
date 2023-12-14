@@ -38,13 +38,13 @@ void addElementToArray(DynamicArray* arr, int element) {
 }
 
 // 4. Создайте функцию для доступа к элементам массива по индексу. Выполняйте проверку длины в этой функции, используя assert.
-int getElementAtIndex(const DynamicArray* arr, size_t index) {
+int getElementAtIndex(DynamicArray* arr, size_t index) {
     assert(index < arr->length);
     return arr->data[index];
 }
 
 // 5. Создайте функцию, которая возвращает текущий кусок массива как std::span.
-std::span<int> getCurrentSpan(const DynamicArray* arr) {
+std::span<int> getCurrentSpan(DynamicArray* arr) {
     return {arr->data, arr->length};
 }
 
